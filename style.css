@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+    color-scheme: dark;
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+    color: #f5f5f2;
+    background: #101214;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    --color-red: #ed7438;
+    --color-muted: #a4a8aa;
+    --color-panel: #191c1f;
+    --color-border: #2b3034;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 50% -18%, rgb(237 65 56 / 18%), transparent 48rem),
+        #101214;
+}
+
+.site-header {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4.5rem, 11vw, 8.5rem) 1.5rem 4rem;
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.site-header::before {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 42px,
+        rgb(255 255 255 / 2%) 43px,
+        transparent 44px
+    );
+    content: "";
+    pointer-events: none;
+}
+
+.site-header > * {
+    position: relative;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--color-red);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.site-header h1 {
+    margin: 1.15rem 0 1rem;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.88;
+    text-transform: uppercase;
+}
+
+.site-header h1 span {
+    color: var(--color-red);
+}
+
+.intro {
+    max-width: 34rem;
+    margin: 1.5rem auto 0;
+    color: #c1c4c5;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.7;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 1.5rem 0 0;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid #303638;
+    border-radius: 999px;
+    background: rgb(16 18 20 / 65%);
+    color: #d3d6d4;
+    font-size: 0.78rem;
+}
+
+.status-dot {
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 50%;
+    background: #77d69b;
+    box-shadow: 0 0 0.7rem rgb(119 214 155 / 70%);
+}
+
+main {
+    width: min(100% - 3rem, 70rem);
+    margin: 0 auto;
+    padding: 3.5rem 0 5rem;
+}
+
+.section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+    margin: 0.4rem 0 0;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.resource-card {
+    position: relative;
+    padding: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 0.7rem;
+    background: linear-gradient(145deg, #1c2023, var(--color-panel) 65%);
+    box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 14%);
+}
+
+.resource-card::before {
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    width: 2.5rem;
+    height: 3px;
+    background: var(--color-red);
+    content: "";
+}
+
+.resource-card h3 {
+    margin: 0 0 0.8rem;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: 1.45rem;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+}
+
+.resource-card a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-top: 1px solid #2b3034;
+    color: #c3c7c8;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.resource-card a::after {
+    flex: 0 0 auto;
+    color: var(--color-red);
+    content: "↗";
+    font-size: 1rem;
+    transition: transform 160ms ease;
+}
+
+.resource-card a:hover {
+    color: #fff;
+}
+
+.resource-card a:hover::after {
+    transform: translate(2px, -2px);
+}
+
+.resource-card a:focus-visible {
+    border-radius: 0.2rem;
+    outline: 2px solid var(--color-red);
+    outline-offset: 3px;
+    color: #fff;
+}
+
+.site-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 620px) {
+    .site-header {
+        padding-bottom: 3.25rem;
+    }
+
+    main {
+        width: min(100% - 2rem, 35rem);
+        padding: 2.75rem 0 3.5rem;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
